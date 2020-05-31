@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:vibration/vibration.dart';
 import 'package:simple_gesture_detector/simple_gesture_detector.dart';
 
 class JoyStick extends StatefulWidget {
@@ -14,9 +15,11 @@ class _JoyStickState extends State<JoyStick> {
     setState(() {
       if (direction == SwipeDirection.up) {
         print('Swiped up!');
+        Vibration.vibrate(duration: 100, amplitude: 100);
         moveForward();
       } else {
         print('Swiped down!');
+        Vibration.vibrate(duration: 100, amplitude: 100);
         moveBackward();
       }
     });
@@ -26,9 +29,11 @@ class _JoyStickState extends State<JoyStick> {
     setState(() {
       if (direction == SwipeDirection.left) {
         print('Swiped left!');
+        Vibration.vibrate(duration: 100, amplitude: 100);
         moveLeft();
       } else {
         print('Swiped right!');
+        Vibration.vibrate(duration: 100, amplitude: 100);
         moveRight();
       }
     });
